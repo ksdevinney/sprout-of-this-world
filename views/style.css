@@ -1,0 +1,24 @@
+h1, h2 {
+    text-align: center;
+}
+
+header {
+    padding: 25px;
+    margin: 25px;
+    /* background-color: aqua; */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a:link {
+    color: ivory;
+    margin-right: 5px;
+}
+
+.btn-success {
+    margin-left: 180px;
+}
