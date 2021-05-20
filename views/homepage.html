@@ -17,11 +17,12 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-success">
             <div class="container-md">
-                <div class="navbar-brand">Home</div>
+                <div class="navbar-brand">
+                    <h1>Home</h1>
+                </div>
                 <ul>
-                    <li><a href="-">Home</a></li>
-                    <li><a href="-">Reminders</a></li>
-                    <li><a href="inventory.html">Plant Info</a></li>
+                    <li><a href="calendar.html">Reminders</a></li>
+                    <li><a href="inventory.html">My Plants</a></li>
                 </ul>
             </div>
         </nav>
@@ -38,20 +39,27 @@
 
 
 
-        <div class="card" id="random-info" style="width: 18rem;">
+        <div class="card" id="weather-box" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Current Weather</h5>
-                <p class="card-text" id="current-weather">Search for a city</p>
+                <h5 class="card-title">Is it a good day for planting?</h5>
+                <p class="card-text">Search for your city's weather</p>
                 <form id="search-form">
                     <input type="text" name="city" placeholder="City Name" id="search-value" />
                     <button type="submit" class="btn btn-success"> Search </button>
+                    <div class="current-weather" id="current-weather">
+                    </div>
                 </form>
             </div>
         </div>
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="../public/js/randomplant.js"></script>
+    <script type="text/javascript" src="../public/js/weather.js"></script>
 
-</html>
 </body>
+</html>
