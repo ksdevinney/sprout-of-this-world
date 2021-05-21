@@ -3,10 +3,10 @@ const { Plant } = require('../../models');
 const withAuth = require('../../utils/auth');
 const router = require("../homeRoutes");
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) =>{
   try {
     const newPlant = await Plant.create({
-      ...req.body,
+      ...req.body ,
       user_id: req.session.user_id,
     });
 
