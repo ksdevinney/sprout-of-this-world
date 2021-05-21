@@ -48,9 +48,9 @@ app.post('/register', (req, res) => {
           messageClass: 'alert-success'
       });
   } else {
-      res.render('register', {
+      res.render( 'register', {
           message: 'Password does not match.',
-          messageClass: 'alert-danger'
+          messageClass:'alert-danger'
       });
   }
 });
