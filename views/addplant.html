@@ -51,8 +51,12 @@
             <input type="text" class="form-control" id="plant-location">
         </div>
         <div class="mb-3 col-5">
-            <label for="exampleFormControlInput1" class="form-label">When do you want to water?</label>
-            <input type="text" class="form-control" id="plant-watered">
+            <select class="form-select" id="plant-watered" aria-label="Default select example">
+                <option selected>When do you want to water?</option>
+                <option value="24-hours">Every day</option>
+                <option value="48-hours">Every other day</option>
+                <option value="72-hours">Every three days</option>
+            </select>
         </div>
         <div class="mb-3 col-5">
             <label for="exampleFormControlInput1" class="form-label">When was it planted?</label>
