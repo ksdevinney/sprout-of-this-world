@@ -1,0 +1,14 @@
+{{#each plants as |plant| }}
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    {{plant.name}}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="fas fa-{{plant.class}}"></i>{{plant.class}}</li>
+    <li class="list-group-item">{{plant.species}}</li>
+    <li class="list-group-item">{{plant.location}}</li>
+    <li class="list-group-item">{{plant.lastWatered}}</li>
+    <li class="list-group-item">{{plant.birthday}}</li>
+  </ul>
+</div>
+{{/each}}
