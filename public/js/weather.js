@@ -1,7 +1,7 @@
 $(document).ready(function(){
     const searchForm = $("#search-form");
     const currentWeatherContainer = $("#current-weather");
-    // const apiKey = ""; openweather api 
+    const apiKey = "9e978b8e79ed54c3ad45d52c5826e0d8";
     const baseUrl = "https://api.openweathermap.org/data/2.5/weather?";
     const iconBaseUrl = "http://openweathermap.org/img/w/"
     const searchValueInput = $("#search-value");
