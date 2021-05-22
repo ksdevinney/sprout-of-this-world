@@ -1,20 +1,21 @@
 const newPlantHandler = async() => {
-    const plantName = document.querySelector('#plant-name').value;
-    const plantClass = document.querySelector('#plant-class').value;
-    const plantSpec = document.querySelector('#plant-species').value;
-    const plantLoc = document.querySelector('#plant-location').value;
-    const plantWatered = document.querySelector('#plant-watered').value;
-    const plantBday = document.querySelector('#plant-birthday').value;
+  console.log('in handler');
+    const name = document.querySelector('#plant-name').value;
+    // const plantClass = document.querySelector('#plant-class').value;
+    // const plantSpec = document.querySelector('#plant-species').value;
+    const location = document.querySelector('#plant-location').value;
+    const schedule = document.querySelector('#schedule').value;
+    const date_planted = document.querySelector('#plant-birthday').value;
 
     // need routes for this
-    const response = await fetch('', {
+    const response = await fetch('/api/plants/add', {
         method: 'POST',
-        body: JSON.stringify({ plantName, plantClass, plantSpec, plantLoc, plantWatered, plantBday}),
+        body: JSON.stringify({ name, location, date_planted, schedule}),
         headers: { 'Content-Type': 'application/json' },
     });
 
     if(response.ok) {
-        // also need routes for this?
+        window.location.assign('/inventory');
     };
 };
 

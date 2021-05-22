@@ -16,48 +16,33 @@ const { User } = require('../../models');
   }
 }); */
 
-app.post('/register', (req, res) => {
-  const { email, firstName, lastName, password, confirmPassword } = req.body;
+router.post('/signup', async (req, res) => {
+  
+  
+  const user = await User.findOne({
+    where: {
+      userName: req.body.userName,
+    },
+  })
+  
+  if (!user) {
+    const newUser = await User.create(req.body);
 
-  // Check if the password and confirm password fields match
-  if (password === confirmPassword) {
+    req.session.save(() => {
+      // req.session.userName = newUser.userName;
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
 
-      // Check if user with the same email is also registered
-      if (users.find(user => user.email === email)) {
-
-          res.render('register', {
-              message: 'User already registered.',
-              messageClass: 'alert-danger'
-          });
-
-          return;
-      }
-
-      const hashedPassword = getHashedPassword(password);
-
-      // Store user into the database if you are using one
-      users.push({
-          firstName,
-          lastName,
-          email,
-          password: hashedPassword
-      });
-
-      res.render('login', {
-          message: 'Registration Complete. Please login to continue.',
-          messageClass: 'alert-success'
-      });
+      res.end();
+    });
   } else {
-      res.render( 'register', {
-          message: 'Password does not match.',
-          messageClass:'alert-danger'
-      });
+    res.status(500).end();
   }
 });
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { userName: req.body.userName } });
 
     if (!userData) {
       res
@@ -75,17 +60,18 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    req.session.save(() => {
+    await req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.end();
     });
+    
 
   } catch (err) {
     res.status(400).json(err);
   }
 });
+
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
