@@ -1,24 +1,51 @@
 <div class="container">
-    <div class="row">
-        <div class="card" style="width: 18rem;" id="random-info">
-            <div class="card-body">
-                <h5 class="card-title">Not sure what to plant?</h5>
-                <p class="card-text" id="factText">Press the button for a suggestion!</p>
-                <button type="button" class="btn btn-success" id="random-fact">Random Plant</button>
-            </div>
-        </div>
+  <div class="row">
+    <div class="card" style="width: 18rem;" id="random-info">
+      <div class="card-body">
+        <h5 class="card-title">Not sure what to plant?</h5>
+        <p class="card-text" id="factText">Press the button for a suggestion!</p>
+        <button type="button" class="btn btn-success" id="random-fact">Random Plant</button>
+      </div>
+    </div>
 
 
 
-        <div class="card" id="weather-box" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Is it a good day for planting?</h5>
-                <p class="card-text">Search for your city's weather</p>
-                <form id="search-form">
-                    <input type="text" name="city" placeholder="City Name" id="search-value" />
-                    <button type="submit" class="btn btn-success"> Search </button>
-                    <div class="current-weather" id="current-weather">
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="card" id="weather-box" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Is it a good day for planting?</h5>
+        <p class="card-text">Search for your city's weather</p>
+        <form id="search-form">
+          <input type="text" name="city" placeholder="City Name" id="search-value" />
+          <button type="submit" class="btn btn-success"> Search </button>
+          <div class="current-weather" id="current-weather">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#if logged_in}}
+<div class="container-alerts">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">WATERING ALERTS</th>
+        <th scope="col">Plant Name</th>
+        <th scope="col">Plant Location</th>
+        <th scope="col">Date Planted</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each plants as |pa|}}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{pa.name}}</td>
+        <td>{{pa.location}}</td>
+        <td>{{pa.datePlanted}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{/if}}

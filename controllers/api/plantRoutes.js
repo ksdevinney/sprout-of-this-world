@@ -3,14 +3,14 @@ const { Plant } = require('../../models');
 const withAuth = require('../../utils/auth');
 const router = require("../homeRoutes");
 
-router.post('/', withAuth, async (req, res) =>{
+router.post('/add', async (req, res) =>{
   try {
     const newPlant = await Plant.create({
-      ...req.body ,
+      ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newPlant);
+    res.status(200).end();
   } catch (err) {
     res.status(400).json(err);
   }
@@ -70,4 +70,4 @@ router.put('/:id', (req, res) => {
       .catch((err) => res.json(err));
   });
 
-module.exports = app
+module.exports = router;

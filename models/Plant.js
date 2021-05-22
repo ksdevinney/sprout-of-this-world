@@ -32,7 +32,7 @@ Plant.init(
       },
     },
     schedule: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
@@ -40,7 +40,7 @@ Plant.init(
     sequelize,
     timestamps: true,
     freezeTableName: true,
-    modelName: 'user',
+    modelName: 'plant',
   }
 );
 
