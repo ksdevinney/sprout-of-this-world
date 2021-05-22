@@ -21,6 +21,7 @@ Plant.init(
     },
     date_planted: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -29,6 +30,10 @@ Plant.init(
         model: 'user',
         key: 'id',
       },
+    },
+    schedule: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
   },
   {

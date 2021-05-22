@@ -1,8 +1,8 @@
 const signUpBtnHandler = async () => {
 
   // TODO: figure out what id's assigned to input fields for username and password
-  const userName = document.querySelector('#user-name-input').value;
-  const password = document.querySelector('#user-pass-input').value;
+  const userName = document.querySelector('#user-name-input').value.trim();
+  const password = document.querySelector('#user-pass-input').value.trim();
 
   const response = fetch('/api/users/signup', {
     method: 'POST',
