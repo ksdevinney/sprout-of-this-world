@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Plant, User } = require('../models');
 const withAuth = require('../utils/auth');
-const shouldAlert = require('../utils/isAlert.js');
+const shouldAlert = require('../utils/shouldAlert.js');
 
 router.get('/', async (req, res) => {
   if(!req.session.logged_in){
@@ -88,6 +88,12 @@ router.get('/addplant', (req, res) => {
   res.render('addplant', {
     logged_in: req.session.logged_in,
   })
+});
+
+router.get('/calendar', (req, res) => {
+  res.render('calendar', {
+    logged_in: req.session.logged_in
+  });
 });
 
 module.exports = router;

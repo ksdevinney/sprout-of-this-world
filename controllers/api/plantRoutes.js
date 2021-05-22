@@ -1,7 +1,5 @@
-const app = require("express").Router()
+const router = require("express").Router()
 const { Plant } = require('../../models');
-const withAuth = require('../../utils/auth');
-const router = require("../homeRoutes");
 
 router.post('/add', async (req, res) =>{
   try {
@@ -24,7 +22,7 @@ router.get('/:id', (req, res) => {
     });
   });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
       const plantData = await Plant.destroy({
         where: {

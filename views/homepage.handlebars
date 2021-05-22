@@ -39,10 +39,10 @@
     <tbody>
       {{#each plants as |pa|}}
       <tr>
-        <th scope="row">1</th>
+        <th scope="row">{{inc_one @index}}</th>
         <td>{{pa.name}}</td>
         <td>{{pa.location}}</td>
-        <td>{{pa.datePlanted}}</td>
+        <td>{{pa.date_planted}}</td>
       </tr>
       {{/each}}
     </tbody>
