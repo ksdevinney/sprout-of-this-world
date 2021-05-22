@@ -19,4 +19,7 @@ module.exports = {
        let array_of_items = my_items[Math.floor(Math.random() * my_items.length)]
        return array_of_items;
     },
+    inc_one: (index) => {
+      return parseInt(index) + 1;
+    }
 };
