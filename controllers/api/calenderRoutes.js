@@ -15,6 +15,7 @@ router.get('/getAlerts', async (req, res) => {
   let events = [];
   plantsToAlert.forEach(plant => {
     const thisPlantAlerts = calendarAlert(plant.date_planted, plant.schedule);
+    // console.log(thisPlantAlerts);
     thisPlantAlerts.forEach(date => {
       events.push({
         title: `Water ${plant.name}`,
