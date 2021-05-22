@@ -2,10 +2,18 @@ h1, h2 {
     text-align: center;
 }
 
+p, h1, h2, h3, h3, h4, h5, h6 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 header {
     padding: 25px;
     margin: 25px;
     /* background-color: aqua; */
+}
+
+.card {
+    margin-right: 20px;
 }
 
 ul {
@@ -19,8 +27,16 @@ a:link {
     margin-right: 5px;
 }
 
-.btn-success {
+a:visited {
+    color:darkgrey;
+}
+
+/* .btn-success {
     margin-left: 180px;
+} */
+
+.container {
+    padding-left: 75px;
 }
 
 /*Calendar styling */
@@ -39,9 +55,10 @@ body {
   font-size:100%;
   line-height:1.5;
   font-family: "Roboto Condensed", sans-serif;
+  background-color: #C0BCB5;
   background:@main-bg;
-  background-image:linear-gradient(@main-bg 0%, darken(@main-bg,12%) 100%);
-  color:@body-color;
+  /* background-image:linear-gradient(@main-bg 0%, darken(@main-bg,12%) 100%);
+  color:@body-color; */
 }
 
 *, *:before, *:after {
@@ -90,6 +107,7 @@ a {
   background:@calendar-bg;
   
 }
+
 table {
   clear:both;
   width:100%;
@@ -98,6 +116,7 @@ table {
   border-collapse:collapse;
   color:@calendar-color;
 }
+
 td {
   height:48px;
   text-align:center;
